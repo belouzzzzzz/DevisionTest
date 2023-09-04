@@ -24,7 +24,7 @@ public class TestLogic {
     public static String phone = "+712312312312";
 
     @BeforeClass
-    public static void openWikiLoginPage() {
+    public static void setDevisionMainPage() {
         System.setProperty("webdriver.chrome.driver", "/Users/alekseybelousov/Downloads/chromedriver_mac64/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(ofSeconds(5));
@@ -46,8 +46,6 @@ public class TestLogic {
 
         WebDriverWait wait = new WebDriverWait(driver, ofSeconds(2));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(Result));
-
-
 
         Assert.assertEquals(DevisionMainPage.getResult(), "Спасибо! Данные успешно отправлены.");
     }
